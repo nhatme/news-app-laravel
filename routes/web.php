@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/detail', function () {
     return view('detail');
 });
+
+Route::get('/404', function () {
+    return view('404');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});

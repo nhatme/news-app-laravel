@@ -76,7 +76,7 @@
             <div class="container-fluid bg-light">
                 <div class="container px-0">
                     <nav class="navbar navbar-light navbar-expand-xl">
-                        <a href="index.html" class="navbar-brand mt-3">
+                        <a href="/" class="navbar-brand mt-3">
                             <p class="text-primary display-6 mb-2" style="line-height: 0;">Newsers</p>
                             <small class="text-body fw-normal" style="letter-spacing: 12px;">Nespaper</small>
                         </a>
@@ -85,9 +85,9 @@
                         </button>
                         <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
-                                <a href="404.html" class="nav-item nav-link">404 Page</a>
+                                <a href="/" class="nav-item nav-link active">Home</a>
+                                <a href="/detail" class="nav-item nav-link">Detail  Page</a>
+                                <a href="/404" class="nav-item nav-link">404 Page</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
                                     <div class="dropdown-menu m-0 bg-secondary rounded-0">
@@ -97,7 +97,7 @@
                                         <a href="#" class="dropdown-item">Dropdown 4</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                                <a href="/contact" class="nav-item nav-link">Contact Us</a>
                             </div>
                             <div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
                                 <div class="d-flex">
@@ -118,6 +118,26 @@
             </div>
         </div>
         <!-- Navbar End -->
+
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
 
 
        @yield('main')
