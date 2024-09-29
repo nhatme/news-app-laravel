@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,5 @@ Route::get('/404', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin');
