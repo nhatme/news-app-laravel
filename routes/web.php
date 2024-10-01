@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FE\HomeController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,20 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin');
+
+Route::prefix('category')->group(function () {
+    Route::get('{slug}', [CategoryController::class, 'show'])->name('category.show');
+    Route::get('/', [CategoryController::class, 'index'])->name('category.index');
 });
 
-Route::get('/detail', function () {
-    return view('detail');
+Route::prefix('news')->group(function () {
+    Route::get('{slug}', [NewsController::class, 'show'])->name('news.detail');
 });
 
-Route::get('/404', function () {
-    return view('404');
-});
-
-Route::get('/contact', function () {
+Route::get("/contact", function () {
     return view('contact');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin');
+// Route::get("/404", function () {
+//     return view('errors.404');
+// });
